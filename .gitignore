@@ -1,6 +1,7 @@
 ## master
 Thesis.pdf
 *.d
+*.fdb_latexmk
 *.snm
 *.log
 *.aux
