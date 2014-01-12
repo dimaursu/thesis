@@ -149,18 +149,18 @@
 \examiner    {}
 \degree      {}
 \authors     {}
-\university  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
-                {University Name}}
-                {University Name}}
-\UNIVERSITY  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
-                {UNIVERSITY NAME (IN BLOCK CAPITALS)}}
-                {UNIVERSITY NAME (IN BLOCK CAPITALS)}}
-\department  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
-                {Department or School Name}}
-                {Department or School Name}}
-\DEPARTMENT  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
+\university  {\texorpdfstring{\href{http://www.utm.md/}
+                {Technical University of Moldova}}
+                {Technical Univeristy of Moldova}}
+\UNIVERSITY  {\texorpdfstring{\href{http://www.utm.md/}
+                {TECHNICAL UNIVERSITY OF MOLDOVA}}
+                {TECHNICAL UNIVERSITY OF MOLDOVA}}
+\department  {\texorpdfstring{\href{http://fcim.utm.md/}
+                {Computer Science and Electronics}}
+                {Computer Science and Electronics}}
+\DEPARTMENT  {\texorpdfstring{\href{http://fcim.utm.md/}
+                {COMPUTER SCIENCE AND ELECTRONICS}}
+                {COMPUTER SCIENCE AND ELECTRONICS}}
 \group       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
                 {Research Group Name}}
                 {Research Group Name}}
@@ -174,7 +174,7 @@
                 {FACULTY NAME (IN BLOCK CAPITALS)}}
                 {FACULTY NAME (IN BLOCK CAPITALS)}}
 \addresses   {}
-\subject     {}
+\subject     {Peer-to-peer teaching network}
 \keywords    {}
 \renewcommand\maketitle{
   \btypeout{Title Page}
@@ -200,8 +200,8 @@
       \smallskip
       {\LARGE \authornames \par}
       \vfill
-      {\large A thesis submitted in partial fulfillment for the \par}
-      {\large degree of Doctor of Philosophy \par}
+      {\large A thesis submitted in partial fulfillment \par}
+      {\large of the Bachelors Degree \par}
       \bigskip
       \bigskip
       {\large in the \par}
@@ -244,7 +244,7 @@
     {\normalsize \facname \par}
     {\normalsize \deptname \par}
     \bigskip
-    {\normalsize Doctor of Philosophy\par}
+    {\normalsize Bachelors Degree\par}
     \bigskip
     {\normalsize\bf \@title \par}
     \medskip
