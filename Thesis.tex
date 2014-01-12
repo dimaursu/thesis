@@ -3,71 +3,85 @@
 %% ----------------------------------------------------------------
 
 % Set up the document
-\documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
-\graphicspath{{Figures/}}  % Location of the graphics files (set up for graphics to be in PDF format)
+% Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+\documentclass[a4paper, 11pt, oneside]{Thesis}
+% Location of the graphics files (set up for graphics to be in PDF format)
+\graphicspath{{Figures/}}
 
 % Include any extra LaTeX packages required
-\usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
-\usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
-\usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
-\hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
+% Use the "Natbib" style for the references in the Bibliography
+\usepackage[square, numbers, comma, sort&compress]{natbib}
+% Needed for the "comment" environment to make LaTeX comments
+\usepackage{verbatim}
+% Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
+\usepackage{vector}
+% Colours hyperlinks in blue, but this can be distracting if there are many
+% links.
+\hypersetup{urlcolor=blue, colorlinks=true}
 
 %% ----------------------------------------------------------------
 \begin{document}
-\frontmatter	  % Begin Roman style (i, ii, iii, iv...) page numbering
+% Begin Roman style (i, ii, iii, iv...) page numbering
+\frontmatter
 
 % Set up the Title Page
-\title  {Skill Social Network}
-\authors  {\texorpdfstring
-            {\href{dima@ceata.org}{Dumitru Ursu}}
-            {Dumitru Ursu}
-            }
-\addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
-\date       {\today}
-\subject    {}
-\keywords   {}
+\title  {Skill Social Network} \authors  {\texorpdfstring
+{\href{dima@ceata.org}{Dumitru Ursu}} {Dumitru Ursu} }
+% Do not change this here, instead these must be set in the "Thesis.cls" file,
+% please look through it instead
+\addresses  {\groupname\\\deptname\\\univname} \date       {\today} \subject
+{} \keywords   {}
 
 \maketitle
 %% ----------------------------------------------------------------
+% It is better to have smaller font and larger line spacing than the other way
+% round
+\setstretch{1.3}
 
-\setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
+% Define the page headers using the FancyHdr package and set up for one-sided
+% printing
+\fancyhead{}  % Clears all page headers and footers \rhead{\thepage}  % Sets the
+right side header to show the page number \lhead{}  % Clears the left side page
+header
 
-% Define the page headers using the FancyHdr package and set up for one-sided printing
-\fancyhead{}  % Clears all page headers and footers
-\rhead{\thepage}  % Sets the right side header to show the page number
-\lhead{}  % Clears the left side page header
-
-\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+ % Finally, use the "fancy" page style to implement the FancyHdr headers
+\pagestyle{fancy}
 
 %% ----------------------------------------------------------------
-% Declaration Page required for the Thesis, your institution may give you a different text to place here
+% Declaration Page required for the Thesis, your institution may give you a
+% different text to place here
 \Declaration{
 
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-I, Dumitru Ursu, declare that this thesis titled, `Skill social network' and the work presented in it are my own. I confirm that:
+I, Dumitru Ursu, declare that this thesis titled, `Skill social network' and the
+work presented in it are my own. I confirm that:
 
 \begin{itemize}
-\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
+\item[\tiny{$\blacksquare$}] This work was done wholly or mainly
+            while in candidature for a research degree at this University.
 
-\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been
+    submitted for a degree or any other qualification at this University or any
+    other institution, this has been clearly stated.
 
-\item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
+\item[\tiny{$\blacksquare$}] Where I have consulted the published work of
+    others, this is always clearly attributed.
 
-\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the
+    source is always given. With the exception of such quotations, this thesis
+    is entirely my own work.
 
 \item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
 
-\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
-\\
+\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself
+jointly with others, I have made clear exactly what was done by others and what
+I have contributed myself.  \\
 \end{itemize}
 
+Signed:\\ \rule[1em]{25em}{0.5pt}  % This prints a line for the signature
 
-Signed:\\
-\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
-
-Date:\\
-\rule[1em]{25em}{0.5pt}  % This prints a line to write the date
+Date:\\ \rule[1em]{25em}{0.5pt}  % This prints a line to write the date
 }
 \clearpage  % Declaration ended, now start a new page
 
@@ -77,41 +91,58 @@ Date:\\
 
 \null\vfill
 % Now comes the "Funny Quote", written in italics
-\textit{``Aut disce aut discede''}
+\textit{``Aut disce aut discede''}\\
+\textit{``Either learn or go away''}
 
-\begin{flushright}
-    Latin saying
-\end{flushright}
+
+\begin{flushright} Latin saying \end{flushright}
 
 \vfill\vfill\vfill\vfill\vfill\vfill\null
-\clearpage  % Funny Quote page ended, start a new page
+\clearpage  % Funny Quote page ended,
 %% ----------------------------------------------------------------
 
 % The Abstract Page
-\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
+\addtotoc{Abstract} % Add the "Abstract" page entry to the Contents
 \abstract{
-\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+This thesis covers the design and implementation of a peer-to-peer teaching
+network. The primary goals is to use cutting-edge technology in order to create
+the social network and to explore unconventional virtual learning techniques.
+One of the secondary goals of the system is to make it standard-based, web-only,
+and so to make it accessible, and independent of proprietary technology.
+
+In order to make the software more useful, it is released under a Free Software
+license, \href{http://www.gnu.org/licenses/agpl-3.0.html}{AGPLv3}. The code can
+be downloaded from \href{https://gitorious.org/discite/discite/}{Gitorious}, and
+used without restrictions by universities or high schools. Deployment scripts
+are provided, and so is documentation.
+
+An instance of the application is running at \url{http://discite.info}. The
+name of the application, "Discite", means "to learn" in Latin.
 
 }
 
 \clearpage  % Abstract ended, start a new page
 %% ----------------------------------------------------------------
 
-\setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
+% Reset the line-spacing to 1.3 for body text (if it has changed)
+\setstretch{1.3}
 
 % The Acknowledgements page, for thanking everyone
 \acknowledgements{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
+The acknowledgements and the people to thank go here, don't forget to include
+your project advisor\ldots
 
 }
 \clearpage  % End of the Acknowledgements
 %% ----------------------------------------------------------------
 
-\pagestyle{fancy}  %The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+% The page style headers have been "empty" all this time, now use the "fancy"
+% headers as defined before to bring them back
+\pagestyle{fancy}
 
 
 %% ----------------------------------------------------------------
@@ -119,11 +150,13 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 \tableofcontents  % Write out the Table of Contents
 
 %% ----------------------------------------------------------------
-\lhead{\emph{List of Figures}}  % Set the left side page header to "List if Figures"
+% Set the left side page header to "List if Figures"
+\lhead{\emph{List of Figures}}
 \listoffigures  % Write out the List of Figures
 
 %% ----------------------------------------------------------------
-\lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
+% Set the left side page header to "List of Tables"
+\lhead{\emph{List of Tables}}
 \listoftables  % Write out the List of Tables
 
 %% ----------------------------------------------------------------
@@ -133,31 +166,10 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 \listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
 {
 % \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
-\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
-
+    \textbf{RoR} & \textbf{R}uby \textbf{o}n \textbf{R}ails \\
+    \textbf{TDD} & \textbf{T}est \textbf{D}riven \textbf{D}evelopment\\
 }
 
-%% ----------------------------------------------------------------
-\clearpage  % Start a new page
-\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
-\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
-{
-% Constant Name & Symbol & = & Constant Value (with units) \\
-Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
-
-}
-
-%% ----------------------------------------------------------------
-\clearpage  %Start a new page
-\lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
-\listofnomenclature{lll}  % Include a list of Symbols (a three column table)
-{
-% symbol & name & unit \\
-$a$ & distance & m \\
-$P$ & power & W (Js$^{-1}$) \\
-& & \\ % Gap to separate the Roman symbols from the Greek
-$\omega$ & angular frequency & rads$^{-1}$ \\
-}
 %% ----------------------------------------------------------------
 % End of the pre-able, contents and lists of things
 % Begin the Dedication page
@@ -208,9 +220,13 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 %% ----------------------------------------------------------------
 \label{Bibliography}
-\lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
-\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
-\bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
+% Change the left side page header to "Bibliography"
+\lhead{\emph{Bibliography}}
+% Use the "unsrtnat" BibTeX style for formatting the Bibliography
+\bibliographystyle{unsrtnat}
+% The references (bibliography) information are stored in the file named
+% "Bibliography.bib"
+\bibliography{Bibliography}
 
 \end{document}  % The End
 %% ----------------------------------------------------------------
