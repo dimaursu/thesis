@@ -1,6 +1,5 @@
 ## master
-Thesis.pdf
-presentation.pdf
+*.pdf
 *.d
 *.fdb_latexmk
 *.snm
