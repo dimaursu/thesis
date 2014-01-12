@@ -1,5 +1,7 @@
 ## master
 *.pdf
+*.blg
+*.lot
 *.d
 *.fdb_latexmk
 *.snm
