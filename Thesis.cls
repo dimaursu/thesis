@@ -118,11 +118,62 @@
         basicstyle=\scriptsize\ttfamily,
         showstringspaces=false,
         keepspaces=true}
-\lstdefinestyle{matlab} {
-        language=Matlab,
-        keywordstyle=\color{blue},
-        commentstyle=\color[rgb]{0.13,0.55,0.13}\em,
-        stringstyle=\color[rgb]{0.7,0,0} }
+% Added color definitions for solarized
+\usepackage{xcolor}
+\definecolor{base03}{HTML}{002B36}
+\definecolor{base02}{HTML}{073642}
+\definecolor{base01}{HTML}{586E75}
+\definecolor{base00}{HTML}{657B83}
+\definecolor{base0}{HTML}{839496}
+\definecolor{base1}{HTML}{93A1A1}
+\definecolor{base2}{HTML}{EEE8D5}
+\definecolor{base3}{HTML}{FDF6E3}
+\definecolor{yellow}{HTML}{B58900}
+\definecolor{orange}{HTML}{CB4B16}
+\definecolor{red}{HTML}{DC322F}
+\definecolor{magenta}{HTML}{D33682}
+\definecolor{violet}{HTML}{6C71C4}
+\definecolor{blue}{HTML}{268BD2}
+\definecolor{cyan}{HTML}{2AA198}
+\definecolor{green}{HTML}{859900}
+
+\usepackage[scaled=0.85]{DejaVuSansMono}
+\lstloadlanguages{Ruby}
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch,
+  switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]"
+}
+\lstdefinestyle{js} {
+    language=JavaScript,
+    basicstyle={\ttfamily\singlespacing},
+    backgroundcolor=\color{base3},
+    keywordstyle=\color{cyan},
+    identifierstyle=\color{orange},
+    commentstyle=\color{base1},
+    stringstyle=\color{blue},
+    numberstyle=\color{violet},
+    breaklines=true,
+    tabsize=2
+}
+\lstdefinestyle{ruby} {
+    language=Ruby,
+    basicstyle={\ttfamily\singlespacing},
+    backgroundcolor=\color{base3},
+    keywordstyle=\color{cyan},
+    identifierstyle=\color{violet},
+    commentstyle=\color{base1},
+    stringstyle=\color{blue},
+    tabsize=2
+}
 \usepackage[pdfpagemode={UseOutlines},bookmarks=true,bookmarksopen=true,
    bookmarksopenlevel=0,bookmarksnumbered=true,hypertexnames=false,
    colorlinks,linkcolor={blue},citecolor={blue},urlcolor={red},
