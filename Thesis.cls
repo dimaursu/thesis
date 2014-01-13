@@ -190,8 +190,6 @@
 \newcommand*{\UNIVERSITY}[1]{\def\UNIVNAME{#1}}
 \newcommand*{\department}[1]{\def\deptname{#1}}
 \newcommand*{\DEPARTMENT}[1]{\def\DEPTNAME{#1}}
-\newcommand*{\group}[1]{\def\groupname{#1}}
-\newcommand*{\GROUP}[1]{\def\GROUPNAME{#1}}
 \newcommand*{\faculty}[1]{\def\facname{#1}}
 \newcommand*{\FACULTY}[1]{\def\FACNAME{#1}}
 \newcommand*{\subject}[1]{\def\subjectname{#1}}
@@ -206,24 +204,18 @@
 \UNIVERSITY  {\texorpdfstring{\href{http://www.utm.md/}
                 {TECHNICAL UNIVERSITY OF MOLDOVA}}
                 {TECHNICAL UNIVERSITY OF MOLDOVA}}
-\department  {\texorpdfstring{\href{http://fcim.utm.md/}
+\department  {\texorpdfstring{\href{http://ti.utm.md/}
+                {Information Technologies}}
+                {Information Technologies}}
+\DEPARTMENT  {\texorpdfstring{\href{http://ti.utm.md/}
+                {INFORMATION TECHNOLOGIES}}
+                {INFORMATION TECHNOLOGIES}}
+\faculty     {\texorpdfstring{\href{http://fcim.utm.md/)}
                 {Computer Science and Electronics}}
                 {Computer Science and Electronics}}
-\DEPARTMENT  {\texorpdfstring{\href{http://fcim.utm.md/}
+\FACULTY     {\texorpdfstring{\href{http://fcim.utm.md/)}
                 {COMPUTER SCIENCE AND ELECTRONICS}}
                 {COMPUTER SCIENCE AND ELECTRONICS}}
-\group       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {Research Group Name}}
-                {Research Group Name}}
-\GROUP       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-                {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-\faculty     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
-                {Faculty Name}}
-                {Faculty Name}}
-\FACULTY     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
 \addresses   {}
 \subject     {Peer-to-peer teaching network}
 \keywords    {}
