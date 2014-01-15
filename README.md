@@ -1,5 +1,9 @@
 # Thesis report made in LaTeX
 
+This thesis is based on the template provided by Sunil Patel,
+http://www.sunilpatel.co.uk/thesis-template/
+It is adjusted to the standards required by Technical University of Moldova.
+
 To compile the LaTeX files you will need a Tex package.
 I recommend Tex Live, it's usually included in the repositories of most
 GNU/Linux distributions.
