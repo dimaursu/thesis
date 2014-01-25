@@ -172,7 +172,8 @@
     identifierstyle=\color{violet},
     commentstyle=\color{base1},
     stringstyle=\color{blue},
-    tabsize=2
+    tabsize=2,
+    title=\lstname
 }
 \usepackage[pdfpagemode={UseOutlines},bookmarks=true,bookmarksopen=true,
    bookmarksopenlevel=0,bookmarksnumbered=true,hypertexnames=false,
