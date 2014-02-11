@@ -89,7 +89,7 @@ most of the requirements.
 
 Meta combo bonuses are a certain way to excel in this assignment. For example,
 an eye-candy baker who is also a usability guru is automatically promoted to a
-+45 godlike level.  Other things that give you extra credit
-
-    Provide references to studies, white-papers, articles or forum discussions
-    that you relied on when making decisions in your project
++45 godlike level.
+Other things that give you extra credit:
+Provide references to studies, white-papers, articles or forum discussions that
+you relied on when making decisions in your project
