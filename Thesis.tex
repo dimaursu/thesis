@@ -4,7 +4,7 @@
 
 % Set up the document
 % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
-\documentclass[a4paper, 11pt, oneside]{Thesis}
+\documentclass[a4paper, 12pt, oneside]{Thesis}
 % Location of the graphics files (set up for graphics to be in PDF format)
 \graphicspath{{Figures/}}
 
@@ -13,8 +13,6 @@
 \usepackage[square, numbers, comma, sort&compress]{natbib}
 % Needed for the "comment" environment to make LaTeX comments
 \usepackage{verbatim}
-% Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
-\usepackage{vector}
 % Colours hyperlinks in blue, but this can be distracting if there are many
 % links.
 \hypersetup{urlcolor=blue, colorlinks=true}
@@ -25,12 +23,14 @@
 \frontmatter
 
 % Set up the Title Page
-\title  {Skill Social Network} \authors  {\texorpdfstring
-{\href{dima@ceata.org}{Dumitru Ursu}} {Dumitru Ursu} }
+\title  {Skill Social Network}
+\authors {\texorpdfstring {\href{dima@ceata.org}{Dumitru Ursu}} {Dumitru Ursu}}
 % Do not change this here, instead these must be set in the "Thesis.cls" file,
 % please look through it instead
-\addresses  {\groupname\\\deptname\\\univname} \date       {\today} \subject
-{} \keywords   {}
+\addresses {\groupname\\\deptname\\\univname}
+\date {\today}
+\subject {}
+\keywords {}
 
 \maketitle
 %% ----------------------------------------------------------------
@@ -40,9 +40,12 @@
 
 % Define the page headers using the FancyHdr package and set up for one-sided
 % printing
-\fancyhead{}  % Clears all page headers and footers \rhead{\thepage}  % Sets the
-right side header to show the page number \lhead{}  % Clears the left side page
-header
+\fancyhead{}
+% Clears all page headers and footers
+\rhead{\thepage}
+% Sets the right side header to show the page number
+% Clears the left side page header
+\lhead{}
 
  % Finally, use the "fancy" page style to implement the FancyHdr headers
 \pagestyle{fancy}
@@ -79,9 +82,11 @@ jointly with others, I have made clear exactly what was done by others and what
 I have contributed myself.  \\
 \end{itemize}
 
-Signed:\\ \rule[1em]{25em}{0.5pt}  % This prints a line for the signature
+Signed:\\
+\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
 
-Date:\\ \rule[1em]{25em}{0.5pt}  % This prints a line to write the date
+Date:\\
+\rule[1em]{25em}{0.5pt}  % This prints a line to write the date
 }
 \clearpage  % Declaration ended, now start a new page
 
@@ -112,11 +117,15 @@ the social network and to explore unconventional virtual learning techniques.
 One of the secondary goals of the system is to make it standard-based, web-only,
 and so to make it accessible, and independent of proprietary technology.
 
-In order to make the software more useful, it is released under a Free Software
-license, \href{http://www.gnu.org/licenses/agpl-3.0.html}{AGPLv3}. The code can
-be downloaded from \href{https://gitorious.org/discite/discite/}{Gitorious}, and
-used without restrictions by universities or high schools. Deployment scripts
-are provided, and so is documentation.
+The application is released under a Free Software license, under the terms of
+\href{http://www.gnu.org/licenses/agpl-3.0.html}{AGPLv3}. The code can be
+downloaded from \href{https://gitorious.org/discite/discite/}{Gitorious}, and
+used without restrictions by universities,high schools or individuals. Ruby and
+the Ruby on Rails framework is used, as is JavaScript. The application was
+developed and tested under a GNU/Linux environment, but it doesn't have any hard
+dependency on this particular system. Other Unix-like operating systems (MacOS,
+Solaris, FreeBSD) are expected to run the program just fine. Deployment scripts
+and documentation are provided.
 
 An instance of the application is running at \url{http://discite.info}. The
 name of the application, "Discite", means "to learn" in Latin.
@@ -133,8 +142,12 @@ name of the application, "Discite", means "to learn" in Latin.
 \acknowledgements{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-The acknowledgements and the people to thank go here, don't forget to include
-your project advisor\ldots
+Fundația Ceata - hosting.
+Victor Nițu - debugging nginx configs.
+Ivan Zarea - project advisor.
+Andrei Lisnic
+
+Viorel Bostan - for pushing us forward.
 
 }
 \clearpage  % End of the Acknowledgements
