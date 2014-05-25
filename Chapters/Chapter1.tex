@@ -20,7 +20,7 @@ iversity (\href{htpps://iversity.org}{\texttt{https://iversity.org}}),
 udacity (\href{https://udacity.com}{\texttt{https://udacity.com}})
 
 What these systems are lacking is interactivity: most of them are just a site
-hosting videos, tasks, and a forum for students.
+hosting videos, tasks and a forum for students.
 
 The interactivity that ``Discite'' brings is some of life proved teaching
 techniques, where a student can interrupt and change the way a lesson goes.
@@ -30,31 +30,45 @@ On the down side, the teacher and students have to meet at a certain time. The
 course recordings can be watched after that, but that wont bring the
 aforementioned benefits.
 
-I think that as the time goes, more and more of the courses will be taken
-online, and my application will fill a gap of teacher-student interaction
-through the Internet.
+As the time goes, more and more courses are expected to be taken online, and
+this web application will fill a gap of teacher-student interaction through the
+Internet.
 Also, a useful feature is that not only teachers can create courses
 (there is no concept of a teacher at the application level, there are just
-course
-owners), and anyone can see what teaching implies, and spread their skills to a
-wide audience.
+course owners), and anyone can see what teaching implies, and spread their
+skills to a wide audience.
 
-\section{Planning}
-Objectives:\\
+\subsection{Objectives}
 Provide an web-based implementation of a new way to have peer-to-peer lessons,
 using open standards, based on cutting-edge technology.
-Methodologies\\
-Test Driven Development - is a approach to software development where you write
-tests first, which fail, as no code can yet be run to fulfill
-the test conditions. Then we write the minimal amount of code to make it pass,
-and then we refactor the code if needed.
-The upside of this approach is that the project doesn't go wild: the focus is
-kept on the necessary features. Also, as we refactor the application
-the test suite immediately shows if our changes broke the functionality in other
-parts of the application.
-The downside: we write as much test code as actual code that will be run. But
-the experience shows us that it pays off in the long term.\\
-Technologies:
+
+\subsection{Methodologies}
+Test Driven Development - is a approach to software development where tests are
+written first, which fail, as no code can yet be run to fulfill the test
+conditions. Then the minimal amount of code is written to make it pass, and then
+a refactor of the code is done if needed.  The upside of this approach is that
+the focus is kept on the necessary features. Also, as a refactor is done the
+test suite immediately shows if those changes broke any functionality in other
+parts of the application.  The downside: the test suite can get as big as actual
+code that will be run. But the experience shows that it pays off in the long
+term. The gains are: \citep{twelveBenefitsOfUnitTests}
+\begin{itemize}
+    \item Unit tests prove that your code actually works
+    \item You get a low-level regression-test suite
+    \item You can improve the design without breaking it
+    \item It's more fun to code with them than without
+    \item They demonstrate concrete progress
+    \item Unit tests are a form of sample code
+    \item It forces you to plan before you code
+    \item It reduces the cost of bugs
+    \item It's even better than code inspections
+    \item It virtually eliminates coder's block
+    \item Unit tests make better designs
+    \item It's faster than writing code without tests
+\end{itemize}
+
+\section{Technologies and frameworks}
+A brief list of technologies used:
 \begin{itemize}
     \item Ruby - ``A dynamic, open source programming language with a focus on
         simplicity and productivity.
@@ -70,14 +84,20 @@ Technologies:
     \item \href{http://www.webrtc.org/}{\texttt{WebRTC}} Real-Time Communication
         implemented in browser, with a simple JavaScript API
 \end{itemize}
-I choose these technologies as I already have experience with most of them. The
-one that I'm not familiar with is WebRTC:
-it's a very young project, aiming to enable creation of rich web applications
-with HTML5. It's still a
+
+\section{Why?}
+These technologies are chosen because of previous experience with them, and they
+are well tested and widely deployed on production environments.
+The only new and untried technology is WebRTC: is a very young project, aiming
+to enable creation of rich web applications with HTML5. It's still a
 \href{http://dev.w3.org/2011/webrtc/editor/webrtc.html}{\texttt{draft}} at W3C
 Nonetheless, the technology is already implemented in 2 popular browser: Google
-Chrome and Mozilla Firefox.
-Features:
+Chrome and Mozilla Firefox.  Internet Explorer doesn't yet support it, but as
+it's market share is below 10\% we can assume that more than 80\% of web users
+\citep{browserStats} will be able to use the program. As the specification will
+leave the draft stage, even more supported browsers are expected.
+
+\section{Features implemented}
 \begin{itemize}
     \item pick a course based on your interests
     \item give the course and teacher a rating
@@ -88,12 +108,21 @@ Features:
     \item presentation
     \item doodling
 \end{itemize}
-Technical challenges - screen sharing, audio/video chat is very
-compute-intensive operation, and while the connections are peer-to-peer
-a user will a older computer would not be able to handle the decoding of tens of
-videos. This is why a limitation must be introduced in the
-application: only the teacher can broadcast/share his screen and video/audio
-chat. Presentations - HTTP, the protocol used for web page delivery
-on the web, is a stateless protocol. Presentations have to be stateful, so
-teacher and students will see the same slide at the same time.
-Add a citing by \citet{tenderlove} tender love.
+
+As the thesis projects is developed, several technical challenges are expected:
+in the screen sharing mode, decoding the video stream is a very computing
+intensive operation. The connections using WebRTC are peer-to-peer, and  we
+should not be worried about the server-side of the application but a user will
+a older computer would not be able to handle the decoding of tens of video
+streams. Also, the network bandwidth imposes limitations. This is why a
+limitation must be introduced in the application: only the teacher can
+broadcast/share his screen and video/audio chat. Presentations - HTTP, the
+protocol used for web page delivery on the web, is a stateless protocol.
+Presentations have to be stateful, so teacher and students will see the same
+slide at the same time. Maintaining a video stream and audio chats should be
+investigated: using the right audio codec this can be implemented performance
+and bandwidth-wise, but theoretically such a feature can be abused, even
+unintentionally. Having a few students interfering with each-other can disrupt
+the lesson. A control panel to manage such use cases can be developed, but it's
+out of the scope of this thesis.
+
