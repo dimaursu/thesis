@@ -162,7 +162,8 @@
     stringstyle=\color{blue},
     numberstyle=\color{violet},
     breaklines=true,
-    tabsize=2
+    tabsize=2,
+    title=\lstname
 }
 \lstdefinestyle{ruby} {
     language=Ruby,
