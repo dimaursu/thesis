@@ -1,9 +1,24 @@
 % Chapter 4
 
-\chapter{Conclusion}
-\label{Chapter4}
-\lhead{Chapter 4. \emph{Conclusion}}
-\section{Discite}
+\chapter{Architecture}
+
+\begin{figure}[htbp]
+    \centering
+%    \includegraphics{discite}
+    \rule{35em}{0.5pt}
+    \caption[Class Diagram]{Class Diagram in UML}
+    \label{fig:Class Diagram}
+\end{figure}
+
+% let's define some commands to include the test suite
+\newcommand{\lTest[1]}{\lstinputlisting[style=ruby]{/home/dimon/sandbox/rails/discite/spec/\string#1}}
+\newcommand{\lFeatureTest[1]}{\lstinputlisting[style=ruby]{/home/dimon/sandbox/rails/discite/spec/features/\string#1}}
+\newcommand{\lPagesTest[1]}{\lstinputlisting[style=ruby]{/home/dimon/sandbox/rails/discite/spec/pages/\string#1}}
+
+\lTest[spec_helper.rb]
+\lFeatureTest[home_spec.rb]
+\lPagesTest[home_page.rb]
+
 This thesis has described the design and the implementation of a peer-to-peer
 teaching network.\\
 \# to add

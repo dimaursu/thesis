@@ -1,99 +1,34 @@
 % Chapter 2
 
-\chapter{Methods Used}
-\label{Chapter2}
-\lhead{Chapter 2. \emph{Methods Used}}
+\chapter{Introducing Discite}
 
-\section{Planning}
-The application is estimated to reach the beta stage after a month of work, mid
-February.
-The most complicated part is expected to be the audio/video conference, as this
-part of the application represents terra incongnito(a estimated 3 weeks work).
-There are very few examples to rely on, and the draft is not yet finalized.
-Also, big difficulties lay ahead with the presentation module: is quite hard to
-make 20 presentation synchronize with the master one in real-time. It is
-expected that this module will take about a week of work.
+\section{About}
+``Discite'' is a web application for interactive peer-to-peer
+teaching. As in mating sites, one can pick a teacher or a student based on
+his/her interests, ratings and rankings, skills one is looking for, language of
+teaching. The peer-to-peer process of learning allows screen sharing, video and
+voice chat, presentations and doodling.
 
-\section{Test-Driven Development}
-Test-Driven Development is a software development methodology and strategy that
-requires test to written first (the red stage), then write just enough code to
-make the tests pass (the green stage), and the analyze the code written, and
-change it if necessary (the refactor stage). By necessity we mean either changing
-the code for performance reasons, readability, consistency with the rest of the
-code base, or other reasons.
+The web application belongs to the MOOC domain (Massive Open Online Course),
+which is a novel approach to distance education.
 
-Rspec is the testing framework used for this project.
-\subsection{Page-Objects}
-Writing plain unit tests, or feature tests comes with one drawback: the tests
-can be brittle(if the markup changes), and when a test fails, is usually hard to
-tell what caused the fail to happen. Using page objects solves some of this
-problem, as when the test fail, the error thrown points to the page that caused
-the error.
+\subsection{Objectives}
+Provide an web-based implementation of a new way to have peer-to-peer lessons,
+using open standards, based on cutting-edge technology.
 
-\section{Software Requirements Specifications}
+Also, a useful feature is that not only teachers can create courses
+(there is no concept of a teacher at the application level, there are just
+course owners), and anyone can see what teaching implies, and spread their
+skills to a wide audience.
 
-\subsection{Business requirements}
-\begin{enumerate}
-\item enables users registration
-\item provides a way for users to create courses
-\item enable interactive teaching process, featuring video presentation,
-doodling
-\end{enumerate}
+The interactivity that ``Discite'' brings is some of life proved teaching
+techniques, where a student can interrupt and change the way a lesson goes.
+Teacher and students can alter the way a course goes, they can interact by chat,
+doodling.
+On the down side, the teacher and students have to meet at a certain time. The
+course recordings can be watched after that, but that wont bring the
+aforementioned benefits.
 
-\subsection{User requirements}
-\begin{enumerate}
-\item registration
-\item choosing a course
-\item the system should retain the user language preference
-\item download materials posted by the teacher
-\item chat with the teacher
-\item rate the course and teacher
-\end{enumerate}
-
-\subsection{Functional requirements}
-\begin{enumerate}
-\item the application should be internationalised
-\item file uploads via AJAX
-\item the interface should be responsive (800x600 up to 4k resolution)
-\item WebRTC video/audio streams
-\end{enumerate}
-
-\subsection{Quality-of-service requirements}
-\begin{enumerate}
-\item it should work without issues for at least 4 hours
-\item each page should have tests
-\item each module should be tested with rspec
-\item the application should be behavior-driven tested with capybara + RSpec
-\item supporting at least up to 200 users simultaneously (apprx. 10-20 courses
-at a time)
-\item deployment by a skilled administrator should take less than 30 min.
-\end{enumerate}
-
-\subsection{Implementation requirements}
-\begin{enumerate}
-\item the system should not require administrators (self-sustained)
-\item there should be no differences between teachers and students outside of a
-class
-\item avoid loosing data during upgrading and downgrading
-\item keep the application independent of the RDBMS solution
-\end{enumerate}
-
-\section{Components}
-Rails 4 - It finally has support for streaming (with ActionController::Live),
-and for server-sent events, that will be used to synchronize the presentation,
-doodles.
-
-Another major component will be a browser synchronizer, that will receive
-from Rails, via server-sent events, which will dispatch messages to 4 objects
-in the course view (Presentation, Media, Sketch and Chat)
-
-\subsection{Storage}
-For storing data, the application uses 2 methods: the persistent data is stored
-in a SQL database, and the files uploaded by the users are stored in the
-file system. For the purpose of archiving the courses there might be implemented
-another storage function (for video, chat), but it will not be implemented in
-version 1.0 of the application. Chats will be ephemeral, they will only be kept
-in users browsers as long as the course is running.
 
 \section{User Interface/User Experience}
 Zurb Foundation was chosen as the basis of the application interface. It has
@@ -106,12 +41,35 @@ The most important and complicated page in the whole system is the course page.
 It will be a page split in four: the video chat, the text chat, the presentation
 and the doodling area.
 
-\section{Implementation}
-The project was started by scaffolding a few rails models (course, user), and
-integrating components such as Zurb Foundation, creating header/footer, front
-page, a course creation form.
+As the time goes, more and more courses are expected to be taken online, and
+this web application will fill a gap of teacher-student interaction through the
+Internet.
+\section{Features implemented}
+\begin{itemize}
+    \item pick a course based on your interests
+    \item give the course and teacher a rating
+    \item choose a preferred language
+    \item filter by skills one is looking for
+    \item screen sharing
+    \item voice/video chat
+    \item presentation
+    \item doodling
+\end{itemize}
 
-\subsection{i18n}
-A selector will be provided in the header. On the user profile page this setting
-can be chosen permanently. The URL should look like:
-discite.info/[lang]/the/rest/of/the/path
+As the thesis projects is developed, several technical challenges are expected:
+in the screen sharing mode, decoding the video stream is a very computing
+intensive operation. The connections using WebRTC are peer-to-peer, and  we
+should not be worried about the server-side of the application but a user will
+a older computer would not be able to handle the decoding of tens of video
+streams. Also, the network bandwidth imposes limitations. This is why a
+limitation must be introduced in the application: only the teacher can
+broadcast/share his screen and video/audio chat. Presentations - HTTP, the
+protocol used for web page delivery on the web, is a stateless protocol.
+Presentations have to be stateful, so teacher and students will see the same
+slide at the same time. Maintaining a video stream and audio chats should be
+investigated: using the right audio codec this can be implemented performance
+and bandwidth-wise, but theoretically such a feature can be abused, even
+unintentionally. Having a few students interfering with each-other can disrupt
+the lesson. A control panel to manage such use cases can be developed, but it's
+out of the scope of this thesis.
+

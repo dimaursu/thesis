@@ -1,7 +1,165 @@
 % Chapter 3
 
-\chapter{User Testing}
-\label{Chapter3}
-\lhead{Chapter 3. \emph{User Testing}}
+\chapter{Underlying Technologies}
 
-Here will be written the results after running tests with real users.
+\section{Web as a platform}
+Why did I choose web: portability
+
+\section{Ruby on Rails}
+Ruby on Rails is a MVC framework, written in Ruby language. One of the reasons of the
+choice was that it has a big community of developers (github stats), and this
+means a large array of choices regarding libraries, a wealth of tutorials and
+guides to follow.
+What makes Ruby and Ruby on Rails stand out of the crowd of programming languages
+and frameworks is that testing and test-driven development mantra is deeply
+integrated in the core of the framework itself, and also in most of the gems
+(libraries) that you can use. This makes the environment very stable (as long as you follow
+the best practices too), and very easy to develop on.
+
+\section{Test-Driven Development}
+Test-Driven Development is a software development methodology and strategy that
+requires test to written first (the red stage), then write just enough code to
+make the tests pass (the green stage), and the analyze the code written, and
+change it if necessary (the refactor stage). By necessity we mean either changing
+the code for performance reasons, readability, consistency with the rest of the
+code base, or other reasons.
+
+\subsection{Methodologies}
+Test Driven Development - is a approach to software development where tests are
+written first, which fail, as no code can yet be run to fulfill the test
+conditions. Then the minimal amount of code is written to make it pass, and then
+a refactor of the code is done if needed.  The upside of this approach is that
+the focus is kept on the necessary features. Also, as a refactor is done the
+test suite immediately shows if those changes broke any functionality in other
+parts of the application.  The downside: the test suite can get as big as actual
+code that will be run. But the experience shows that it pays off in the long
+term. The gains are: \citep{twelveBenefitsOfUnitTests}
+\begin{itemize}
+    \item Unit tests prove that your code actually works
+    \item You get a low-level regression-test suite
+    \item You can improve the design without breaking it
+    \item It's more fun to code with them than without
+    \item They demonstrate concrete progress
+    \item Unit tests are a form of sample code
+    \item It forces you to plan before you code
+    \item It reduces the cost of bugs
+    \item It's even better than code inspections
+    \item It virtually eliminates coder's block
+    \item Unit tests make better designs
+    \item It's faster than writing code without tests
+\end{itemize}
+
+\section{Technologies and frameworks}
+A brief list of technologies used:
+\begin{itemize}
+    \item Ruby - ``A dynamic, open source programming language with a focus on
+        simplicity and productivity.
+        It has an elegant syntax that is natural to read and easy to write.''
+        \href{https://wwww.ruby-lang.org/en/}{\texttt{www.ruby-lang.org/en}}
+    \item \href{http://rubyonrails.org}{\texttt{Ruby on Rails}} - a MVC
+        (Model-View-Controller) server-side web development framework, backed by
+        the Ruby language
+    \item \href{http://foundation.zurb.com/}{\texttt{Zurb Foundation}} - A
+        responsive front-end framework
+    \item \href{https://github.com/plataformatec/devise}{\texttt{Devise}} for
+        authentication
+    \item \href{http://www.webrtc.org/}{\texttt{WebRTC}} Real-Time Communication
+        implemented in browser, with a simple JavaScript API
+\end{itemize}
+
+
+Rspec is the testing framework used for this project.
+\subsection{Page-Objects}
+Writing plain unit tests, or feature tests comes with one drawback: the tests
+can be brittle(if the markup changes), and when a test fails, is usually hard to
+tell what caused the fail to happen. Using page objects solves some of this
+problem, as when the test fail, the error thrown points to the page that caused
+the error.
+
+\section{Software Requirements Specifications}
+
+\subsection{Business requirements}
+\begin{enumerate}
+\item enables users registration
+\item provides a way for users to create courses
+\item enable interactive teaching process, featuring video presentation,
+doodling
+\end{enumerate}
+
+\subsection{User requirements}
+\begin{enumerate}
+\item registration
+\item choosing a course
+\item the system should retain the user language preference
+\item download materials posted by the teacher
+\item chat with the teacher
+\item rate the course and teacher
+\end{enumerate}
+
+\subsection{Functional requirements}
+\begin{enumerate}
+\item the application should be internationalised
+\item file uploads via AJAX
+\item the interface should be responsive (800x600 up to 4k resolution)
+\item WebRTC video/audio streams
+\end{enumerate}
+
+\subsection{Quality-of-service requirements}
+\begin{enumerate}
+\item it should work without issues for at least 4 hours
+\item each page should have tests
+\item each module should be tested with rspec
+\item the application should be behavior-driven tested with capybara + RSpec
+\item supporting at least up to 200 users simultaneously (apprx. 10-20 courses
+at a time)
+\item deployment by a skilled administrator should take less than 30 min.
+\end{enumerate}
+
+\subsection{Implementation requirements}
+\begin{enumerate}
+\item the system should not require administrators (self-sustained)
+\item there should be no differences between teachers and students outside of a
+class
+\item avoid loosing data during upgrading and downgrading
+\item keep the application independent of the RDBMS solution
+\end{enumerate}
+
+\section{Components}
+Rails 4 - It finally has support for streaming (with ActionController::Live),
+and for server-sent events, that will be used to synchronize the presentation,
+doodles.
+
+\section{Why?}
+These technologies are chosen because of previous experience with them, and they
+are well tested and widely deployed on production environments.
+The only new and untried technology is WebRTC: is a very young project, aiming
+to enable creation of rich web applications with HTML5. It's still a
+\href{http://dev.w3.org/2011/webrtc/editor/webrtc.html}{\texttt{draft}} at W3C
+Nonetheless, the technology is already implemented in 2 popular browser: Google
+Chrome and Mozilla Firefox.  Internet Explorer doesn't yet support it, but as
+it's market share is below 10\% we can assume that more than 80\% of web users
+\citep{browserStats} will be able to use the program. As the specification will
+leave the draft stage, even more supported browsers are expected.
+
+
+Another major component will be a browser synchronizer, that will receive
+from Rails, via server-sent events, which will dispatch messages to 4 objects
+in the course view (Presentation, Media, Sketch and Chat)
+
+\subsection{Storage}
+For storing data, the application uses 2 methods: the persistent data is stored
+in a SQL database, and the files uploaded by the users are stored in the
+file system. For the purpose of archiving the courses there might be implemented
+another storage function (for video, chat), but it will not be implemented in
+version 1.0 of the application. Chats will be ephemeral, they will only be kept
+in users browsers as long as the course is running.
+
+\section{Implementation}
+The project was started by scaffolding a few rails models (course, user), and
+integrating components such as Zurb Foundation, creating header/footer, front
+page, a course creation form.
+
+\section{i18n}
+A selector will be provided in the header. On the user profile page this setting
+can be chosen permanently. The URL should look like:
+discite.info/[lang]/the/rest/of/the/path
