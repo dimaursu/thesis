@@ -15,7 +15,7 @@
 \usepackage{verbatim}
 % Colours hyperlinks in blue, but this can be distracting if there are many
 % links.
-\hypersetup{urlcolor=blue, colorlinks=true}
+\hypersetup{urlcolor=darkblue, colorlinks=true}
 
 %% ----------------------------------------------------------------
 \begin{document}
@@ -23,32 +23,18 @@
 \frontmatter
 
 % Set up the Title Page
-\title  {Skill Social Network}
-\authors {\texorpdfstring {\href{dima@ceata.org}{Dumitru Ursu}} {Dumitru Ursu}}
+\title  {A Social Network for the Development of Skills}
 % Do not change this here, instead these must be set in the "Thesis.cls" file,
 % please look through it instead
 \addresses {\groupname\\\deptname\\\univname}
 \date {\today}
 \subject {}
 \keywords {}
-
 \maketitle
 %% ----------------------------------------------------------------
 % It is better to have smaller font and larger line spacing than the other way
 % round
 \setstretch{1.3}
-
-% Define the page headers using the FancyHdr package and set up for one-sided
-% printing
-\fancyhead{}
-% Clears all page headers and footers
-\rhead{\thepage}
-% Sets the right side header to show the page number
-% Clears the left side page header
-\lhead{}
-
- % Finally, use the "fancy" page style to implement the FancyHdr headers
-\pagestyle{fancy}
 
 %% ----------------------------------------------------------------
 % Declaration Page required for the Thesis, your institution may give you a
@@ -153,29 +139,24 @@ Viorel Bostan - for pushing us forward.
 \clearpage  % End of the Acknowledgements
 %% ----------------------------------------------------------------
 
-% The page style headers have been "empty" all this time, now use the "fancy"
-% headers as defined before to bring them back
-\pagestyle{fancy}
-
-
 %% ----------------------------------------------------------------
-\lhead{\emph{Contents}}  % Set the left side page header to "Contents"
+\emph{Contents}  % Set the left side page header to "Contents"
 \tableofcontents  % Write out the Table of Contents
 
 %% ----------------------------------------------------------------
 % Set the left side page header to "List if Figures"
-\lhead{\emph{List of Figures}}
+\emph{List of Figures}
 \listoffigures  % Write out the List of Figures
 
 %% ----------------------------------------------------------------
 % Set the left side page header to "List of Tables"
-\lhead{\emph{List of Tables}}
+\emph{List of Tables}
 \listoftables  % Write out the List of Tables
 
 %% ----------------------------------------------------------------
 \setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
 \clearpage  % Start a new page
-\lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
+\emph{Abbreviations}  % Set the left side page header to "Abbreviations"
 \listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
 {
 % \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
@@ -197,7 +178,6 @@ Viorel Bostan - for pushing us forward.
 
 %% ----------------------------------------------------------------
 \mainmatter % Begin normal, numeric (1,2,3...) page numbering
-\pagestyle{fancy}  % Return the page headers back to the "fancy" style
 
 % Include the chapters of the thesis, as separate files
 % Just uncomment the lines as you write the chapters
@@ -220,21 +200,13 @@ Viorel Bostan - for pushing us forward.
 
 \input{./Appendices/AppendixA} % User's Manual
 
-\input{./Appendices/AppendixB} % Maintenance Manual
-
-\input{./Appendices/AppendixC} % Design Documents
-
-\input{./Appendices/AppendixD} % Source Code
-
-\input{./Appendices/AppendixE} % Test Suite
-
 \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 \backmatter
 
 %% ----------------------------------------------------------------
 \label{Bibliography}
 % Change the left side page header to "Bibliography"
-\lhead{\emph{Bibliography}}
+\emph{Bibliography}
 % Use the "unsrtnat" BibTeX style for formatting the Bibliography
 \bibliographystyle{unsrtnat}
 % The references (bibliography) information are stored in the file named

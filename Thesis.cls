@@ -48,14 +48,14 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 \usepackage{vmargin}
-\setmarginsrb           { 2.5cm}  % left margin
-                        {   2cm}  % top margin
-                        { 1.5cm}  % right margin
-                        { 2.5cm}  % bottom margin
-                        {  20pt}  % head height
-                        {0.25in}  % head sep
-                        {   9pt}  % foot height
-                        { 0.3in}  % foot sep
+\setmarginsrb           {20mm}  % left margin
+                        {20mm}  % top margin
+                        {10mm}  % right margin
+                        {20mm}  % bottom margin
+                        {0mm}  % head height
+                        {0mm}  % head sep
+                        {0mm}  % foot height
+                        {0mm}  % foot sep
 \raggedbottom
 \setlength{\topskip}{1\topskip \@plus 5\p@}
 \doublehyphendemerits=10000       % No consecutive line hyphens.
@@ -63,12 +63,17 @@
 \widowpenalty=9999                % Almost no widows at bottom of page.
 \clubpenalty=9999                 % Almost no orphans at top of page.
 \interfootnotelinepenalty=9999    % Almost never break footnotes.
-\usepackage{fancyhdr}
-\lhead[\rm\thepage]{\fancyplain{}{\sl{\rightmark}}}
-\rhead[\fancyplain{}{\sl{\leftmark}}]{\rm\thepage}
-\chead{}\lfoot{}\rfoot{}\cfoot{}
-\pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\btypeout{\thechapter\space #1}\markboth{\@chapapp\ \thechapter\ #1}{\@chapapp\ \thechapter\ #1}}
+% chapter heading formatting
+\usepackage{titlesec}
+%remove the numbers on chapters
+\titleformat{\chapter}[display]{\normalfont\large\bfseries}{}{14pt}{}
+\titlespacing*{\chapter}{0pt}{-120pt}{-40pt}
+% customize and compact \section and \subsection
+\titleformat{\section}[display]{\normalfont\normalsize\bfseries}{}{13pt}{\thesection. }
+\titlespacing*{\section}{0pt}{-50pt}{3pt}
+\titleformat{\subsection}[display]{\normalfont\normalsize\bfseries}{}{13pt}{\thesubsection. }
+\titlespacing*{\subsection}{0pt}{-40pt}{3pt}
+
 \renewcommand{\sectionmark}[1]{}
 \renewcommand{\subsectionmark}[1]{}
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
@@ -134,6 +139,7 @@
 \definecolor{magenta}{HTML}{D33682}
 \definecolor{violet}{HTML}{6C71C4}
 \definecolor{blue}{HTML}{268BD2}
+\definecolor{darkblue}{HTML}{07052F}
 \definecolor{cyan}{HTML}{2AA198}
 \definecolor{green}{HTML}{859900}
 
@@ -183,41 +189,38 @@
 \pdfstringdefDisableCommands{
    \let\\\space
 }
+
+% use utf-8 system fonts and more specifically FreeSerif, which is similar to Times New Roman
+\usepackage{xltxtra,fontspec,xunicode}
+\setromanfont{FreeSerif}
+
 \newcommand*{\supervisor}[1]{\def\supname{#1}}
 \newcommand*{\examiner}[1]{\def\examname{#1}}
 \newcommand*{\degree}[1]{\def\degreename{#1}}
 \newcommand*{\authors}[1]{\def\authornames{#1}}
 \newcommand*{\addresses}[1]{\def\addressnames{#1}}
+\newcommand*{\ministry}[1]{\def\ministry{#1}}
 \newcommand*{\university}[1]{\def\univname{#1}}
-\newcommand*{\UNIVERSITY}[1]{\def\UNIVNAME{#1}}
 \newcommand*{\department}[1]{\def\deptname{#1}}
-\newcommand*{\DEPARTMENT}[1]{\def\DEPTNAME{#1}}
 \newcommand*{\faculty}[1]{\def\facname{#1}}
-\newcommand*{\FACULTY}[1]{\def\FACNAME{#1}}
 \newcommand*{\subject}[1]{\def\subjectname{#1}}
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
 \supervisor  {}
 \examiner    {}
 \degree      {}
 \authors     {}
+\ministry  {\texorpdfstring{\href{http://edu.md/}
+                {Ministerul Educației al Republicii Moldova}}
+                {Ministerul Educației al Republicii Moldova}}
 \university  {\texorpdfstring{\href{http://www.utm.md/}
-                {Technical University of Moldova}}
-                {Technical Univeristy of Moldova}}
-\UNIVERSITY  {\texorpdfstring{\href{http://www.utm.md/}
-                {TECHNICAL UNIVERSITY OF MOLDOVA}}
-                {TECHNICAL UNIVERSITY OF MOLDOVA}}
+                {Universitatea Tehnică a Moldovei }}
+                {Universitatea Tehnică a Moldovei }}
 \department  {\texorpdfstring{\href{http://ti.utm.md/}
-                {Information Technologies}}
-                {Information Technologies}}
-\DEPARTMENT  {\texorpdfstring{\href{http://ti.utm.md/}
-                {INFORMATION TECHNOLOGIES}}
-                {INFORMATION TECHNOLOGIES}}
+                {Filiera Anglofonă „Computer Science”}}
+                {Filiera Anglofonă „Computer Science”}}
 \faculty     {\texorpdfstring{\href{http://fcim.utm.md/)}
-                {Computer Science and Electronics}}
-                {Computer Science and Electronics}}
-\FACULTY     {\texorpdfstring{\href{http://fcim.utm.md/)}
-                {COMPUTER SCIENCE AND ELECTRONICS}}
-                {COMPUTER SCIENCE AND ELECTRONICS}}
+                {Facultatea de Calculatoare, Informatică și Microelectronică}}
+                {Facultatea de Calculatoare, Informatică și Microelectronică}}
 \addresses   {}
 \subject     {Peer-to-peer teaching network}
 \keywords    {}
@@ -233,30 +236,35 @@
     \let\footnoterule\relax
     \let \footnote \thanks
     \setcounter{footnote}{0}
-    \null\vfil
-    \vskip 60\p@
     \begin{center}
       \setlength{\parskip}{0pt}
-      {\large\textbf{\UNIVNAME}\par}
+      {\Large\textbf{\ministry}\par}
+      {\Large\textbf{\univname}\par}
+      {\Large\textbf{\facname}\par}
+      {\Large\textbf{\deptname}\par}
+      \hfill Admis la susținere
+
+      \hfill Șef de catedră: conf. dr. Viorel Bostan
+
+      \hfill „\underline{\hspace{0.7cm}}”\underline{\hspace{3.5cm}}2014
       \vfill
       {\huge \bf \@title \par}
-      \vfill
-      {\LARGE by \par}
       \smallskip
-      {\LARGE \authornames \par}
+      {\large Proiect de licență \par}
+      \bigskip
       \vfill
-      {\large A thesis submitted in partial fulfillment \par}
-      {\large of the Bachelors Degree \par}
+      \hfill\begin{tabular}{ r r r }
+          Student:&{\texorpdfstring {\href{dima@ceata.org}{D. Ursu}} {D. Ursu}}&\underline{\hspace{2cm}} \\
+          Conducător:&{\texorpdfstring {\href{zarea.ion@gmail.com}{I. Zarea}} {I. Zarea}}&\underline{\hspace{2cm}} \\
+          Consultanți:&{\texorpdfstring {\href{viorel_bostan@mail.utm.md}{V. Bostan}} {V. Bostan}}&\underline{\hspace{2cm}} \\
+          &{\texorpdfstring {\href{}{M. Balan}} {M. Balan}}&\underline{\hspace{2cm}} \\
+          &{\texorpdfstring {\href{ian.tyrrell@ityrrell.com}{I. Tyrell}} {I. Tyrell}}&\underline{\hspace{2cm}} \\
+          &{\texorpdfstring {\href{}{M. Gîrbu}} {M. Gîrbu}}&\underline{\hspace{2cm}} \\
+      \end{tabular}
+      \vfill
       \bigskip
       \bigskip
-      {\large in the \par}
-      {\large \facname \par}
-      {\large \deptname \par}
-      \bigskip
-      \bigskip
-      \bigskip
-      {\Large \@date \par}
-      \bigskip
+      {\large Chișinău, 2014\par}
     \end{center}
     \par
     \@thanks
@@ -282,7 +290,7 @@
   \null\vfil
   \begin{center}
     \setlength{\parskip}{0pt}
-    {\normalsize \UNIVNAME \par}
+    {\normalsize \univname \par}
     \bigskip
     {\huge{\textit{Abstract}} \par}
     \bigskip
@@ -293,8 +301,6 @@
     \bigskip
     {\normalsize\bf \@title \par}
     \medskip
-    {\normalsize by \authornames \par}
-    \bigskip
   \end{center}
 }
 {
@@ -317,8 +323,7 @@
       \@restonecolfalse
     \fi
     \chapter*{\contentsname
-        \@mkboth{
-           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
+        \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
     \@starttoc{toc}
     \if@restonecol\twocolumn\fi
    \cleardoublepage
