@@ -1,0 +1,48 @@
+\section*{Conclusions}
+\phantomsection
+As the thesis projects was developed, several technical challenges were met:
+the functionality of the video chat had to be reduced, as sending tens or
+hundreds of video streams simoultaneuosly is currently impossible.
+One of the reasons is that  decoding the video stream is a very computing
+intensive operation. The connections using WebRTC are peer-to-peer so the server
+is not a bottleneck, but users with older computers would not be able to handle
+the decoding of many video streams. The network bandwidth imposes limitations,
+and this was also taken into account when designing the application.
+Also, managing the students and the chat would be difficult and disruptive for
+the teacher.
+A control panel to manage such use cases can be developed, but it's
+out of the scope of this thesis.
+
+The rating system that was planned initially as the feedback component in this
+self-correcting system was not built, due to lack of time. In future versions
+the rating system will be put at work, and it's efficienciency will be tested out.
+The current system bets on self-organization, on students joining the platform
+according to learning goals, prior knowledge and skills, and common interests.
+The limitation that was introduced in the application is also subject to changes:
+currently only the teacher can broadcast/share his screen and video/audio chat.
+Another problem was with the presentations: HTTP, the protocol used for web page
+delivery on the web, is a stateless protocol. Presentations have to be stateful,
+so teacher and students will see the same slide at the same time, and the server
+was used to achieve this, with Server-Sent Events, another new technology
+standardised in HTML5. In the current iteration of the platform, only two events
+are syncronized, '.next-slide' and '.prev-slide'. This poses issues when there is
+a jump in page involved, or if some student joins later. A way of periodicaly checking
+if all participants are at the same slide should be introduced.
+
+Future work inlcudes the admin panel, a rewrite of the course page in NodeJS,
+WebSockets as the sycronization channel, and a better course discovery experience.
+Because of the lack of time and experience desining a big systems, the application
+feels a bit half-backed un unstable, but it was a powerfull learning experience.
+Athough the web app was tested with Chrome and Firefox, the experience is still
+bit flacky.
+A lot of work was put in making PDF and ODF presentation uploads available: many
+teachers already have their presentations in PDF, .odp or .ppt format, but building
+this has failed, mainly because of weak skills in JavaScript and very complex libraries
+used to render those files, like WebODF and PDF.js; because of time contraints this
+task was delayed.
+
+The main objective has been reached: the application was build using modern
+technologies such as WebRTC, SSE, it is interactive and engaging, much more than
+traditional web pages. All this is possible with recent advances in the HTML
+standardisation, and very efficient browser implementations.
+\clearpage
