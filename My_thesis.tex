@@ -1,0 +1,95 @@
+\documentclass[12pt,a4paper,titlepage]{article}
+\usepackage{License_style}
+
+% the document should be compiled with pdfLaTex
+
+\begin{document}
+
+\numberwithin{lstlisting}{section}
+
+\setcounter{page}{4}
+
+\phantomsection
+%\addcontentsline{toc}{section}{АННОТАЦИЯ}
+\input{Chapters/abstract.tex}
+\cleardoublepage
+
+\input{Chapters/rezumat.tex}
+\cleardoublepage
+
+\pagenumbering{gobble}
+\ThisULCornerWallPaper{1}{chenar1.pdf}
+\tableofcontents
+\ThisULCornerWallPaper{1}{chenar2.pdf}
+\addtocontents{toc}{\protect\thispagestyle{empty}} % no page number on the table of contents page
+\cleardoublepage
+
+\pagenumbering{arabic}
+\setcounter{page}{8}
+
+%LISTA FIGURILOR. Este recomandabila daca in text ai peste cel putin 10-15 FIGURI
+\listoffigures
+\addcontentsline{toc}{section}{List of figures}
+\clearpage
+
+%LISTA TABELELOR. Este recomandabila daca in text ai peste cel putin 10-15 tabele
+%\listoftables
+%\addcontentsline{toc}{section}{List of tables}
+%\clearpage
+
+\lstlistoflistings
+\addcontentsline{toc}{section}{Listings}
+\cleardoublepage
+
+%INTRODUCERE
+%\setcounter{page}{17}
+\phantomsection
+\addcontentsline{toc}{section}{Introduction}
+\input{Chapters/Introduction.tex}
+\cleardoublepage
+
+% CAPITOLUL 1
+\input{Chapters/Chapter1.tex}
+\cleardoublepage
+
+%CAPITOLUL2
+\input{Chapters/Chapter2.tex}
+\cleardoublepage
+
+%CAPITOLUL 3
+\input{Chapters/Chapter3.tex}
+\cleardoublepage
+
+%CAPITOLUL 4
+\input{Chapters/Chapter4.tex}
+\cleardoublepage
+
+\input{Chapters/Chapter5.tex}
+\cleardoublepage
+
+% IMPORTANT REMARK
+% If your table of contents need to be splitted in two parts (in order to accomodate the frame used for TOC)
+% within the body text, right before the chapter/section that you want to be started on anew page,
+% you should add:     \addtocontents{toc}{\protect\newpage}
+
+%CONCLUZII
+\phantomsection
+\addcontentsline{toc}{section}{Conclusions}
+\input{Chapters/Conclusion.tex}
+\cleardoublepage
+
+\cleardoublepage
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{unsrtnat}
+\bibliography{Bibliography}
+\cleardoublepage
+
+\phantomsection
+%\setcounter{page}{235}
+\addcontentsline{toc}{section}{Appendix}
+\input{./Appendices/AppendixA.tex}
+
+\cleardoublepage
+
+
+\end{document}
