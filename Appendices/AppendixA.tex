@@ -1,8 +1,52 @@
-% Appendix A
+% Appendix
+\section*{Appendix}
+\phantomsection
+Because the application is licensed unde AGPLv3, and the source code is available
+for download, the application can be instaled on the hardware a university owns,
+for example. Below is discussed how an administrator should proceed in order to
+deploy the application and to maintain it fuctional.
+\subsection{Installing the application}
+Things to keep in mind:
+Run every command with a RAILS\_ENV="something" as a prefix, if you want to
+switch away from the default "development" environment that Rails uses. You should
+deploy the application with the development profile only for debugging purposes,
+use the production profile for all other uses.
 
-\chapter{Maintenace Manual}
-\label{AppendixA}
-\lhead{Appendix A. \emph{Maintenance Manual}}
+Fist, check if you have ruby installed on your system: chances are that is already
+there. Keep in mind that the program was written on rubinius-2.1.1, but with
+small adjustments it will work fine on MRI, v2.0.
+If ruby is not present (running irb in terminal doesn't do anything, for example,
+you should install it by using your distribution recommended way, or by using
+either ruby-install + chruby, or RVM. Both are specialized tools for compiling, installation
+and switching to the proper ruby version.
+The following system dependencies are needed:
+\begin{enumerate}[topsep=5pt, partopsep=0pt,itemsep=3pt,parsep=1pt]
+    \item[--] nodejs, or another javascript runtime;
+    \item[--] graphicsmagick.
+\end{enumerate}
+Clone the repo (git is needed for this step:
+\[ git \quad  clone \quad git@gitorious.org:discite/discite.git\]
+Then, inside the directory, run:
+\[ bundle \quad install \]
+Before you deploy, it's a good idea to run the test suite
+\[ rake \quad test:all\]
+As a deployment tool, capistrano is used.
+It supports the scripting and execution of arbitrary tasks, and includes a set of sane-default deployment workflows.
+configure the relevant fields in \(config/deploy\), then run
+\[ cap \quad production \quad deploy\]
+\subsection{Database Configuration}
+Edit the \(config/database.yml\) file, and run:
+\[rake \quad db:create\]
+Database initialization
+\[rake \quad db:migrate\]
+If you are doing development, you may want to run the database seeder script:
+\[rake \quad  db:seed\]
+\subsection{Server setup}
+Now you should be ready to run
+\[./bin/rails server \quad -p \quad  <port>\]
 
-% how an administrator should proceed in order to deploy the application
-% and to maintain it fuctional
+Some of the tools that are used in development are rubocop, a static code analyzer,
+the standard ruby debugger, and simplecov, to have feedback regarding test coverage.
+All of these tools are available from the standard distribution channel, namely RubyGems.
+
+
