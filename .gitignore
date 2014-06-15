@@ -2,7 +2,9 @@
 *.pdf
 *.blg
 *.lot
+*.lol
 *.bbl
+*.dia~
 *.d
 *.fdb_latexmk
 *.snm
