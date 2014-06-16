@@ -1,0 +1,432 @@
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{d}[1]{D{.}{.}{#1} }
+\section{Economic analysis}
+\phantomsection
+
+\subsection{Description}
+Social networks are very popular these days, billions of users are using them
+each day. Most of them are focused towards keeping in touch with your friends,
+or making new ones. Discite purpose is to use the social nature of the web to
+learn something new, or to teach other people a skill that you are good at. The
+web as a learning platform has been exploited many times before, several
+successful commercial projects being BlackBoard, Moodle.
+
+\subsection{Planning}
+Creating a schedule is one of the first steps of project management. Using a
+Spiral Workflow model, the project development will go through 3 steps:
+determining the requirements, writing tests and then develop enough to make the
+tests pass, planning for the next iteration.
+
+\subsection{Objectives}
+Planning helps to figure out the most important parts of the project, which will
+determine the user experience when using the software. Writing tests ahead, will
+help keep the team on tracks. This technique, when tests are written first, and
+the code after, is called Test Driven Development, and allows faster iteration
+through ideas while giving developers an idea of where the project is heading.
+
+
+\subsection{Work amount evaluation}
+The whole development of Discite will consist of planning, development and
+deployment. These 3 steps can be repeated several times, until the quality of
+the project is considered optimal. The second step, development, is expected to
+consume most of the resources, both in people involved, and hours, because it is
+the most involved: beside implementing features, testing is necessary, bug
+fixing, and constant changes, based on the feedback from the testing team.
+
+\subsection{Schedule}
+In order to have a better grasp of how much the project will take place,
+extensive planning in the first iteration is necessary. This leads to a better
+understanding of the project, and where the most difficult and time consuming
+part are expected. With this information, the project can be divided in small
+tasks and intermediate deadlines, thus assuring the project will have a logical
+flow of development.
+The duration of the project can be obtained from the formula:
+
+\begin{eqnarray}
+DA = FD - SD + RT, \label{4.1}
+\end{eqnarray}
+where DA stands for duration of action, FD denotes finish date, SD is start date
+and RT means  reserve time.  Start and finish date is days when activities take
+place and Reserve time is number of days exceed the initial estimate.
+
+In the table \ref{BriefSchedule} we see a representation of the initial schedule
+of the development process, it will use the following notations:
+\begin{enumerate}
+    \item[--] PM: Project manager
+    \item[--] SD: Software developers
+    \item[--] SA: System architect
+    \item[--] PO: Product owner
+    \item[--] PC: personal computer
+    \item[--] D: Designer
+\end{enumerate}
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\begin{table}[ht!]
+	\centering
+	\caption{Brief Schedule}
+	{
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{C{1cm}|C{4cm}|C{2cm}|C{2cm}|C{2cm}|C{4.5cm}}
+		\hline
+		Nr. & Activity name & Worker & Activity duration, days & Who approves the activity & Resources used \\
+		\hline \hline
+                1 & Define the concept & \specialcell{PM \\ SD \\ SA} & \multicolumn{1}{|c|}{\specialcell{11\\12\\14}} & PM, PO & Internet, PC, discussions with organization\\
+
+                2 & UML and DB modelling & \specialcell{SA \\ SD} & \multicolumn{1}{|c|}{\specialcell{7\\7}} & PM & Internet, PC \\
+
+                3 & Define technologies used & \specialcell{SD \\ SA} & \multicolumn{1}{|c|}{\specialcell{4\\2}} & PM & Internet, PC \\
+
+                4 & Business logic & SD & \multicolumn{1}{|c|}{71} & PM & Internet, PC, IDE, books \\
+
+                5 & Design &  D & \multicolumn{1}{|c|}{20} & PM, PO & Internet, PC, IDE, books \\
+
+                6 & Testing and fixing & SD  &  \multicolumn{1}{|c|}{28} & PM, PO & Internet, PC, IDE, books \\
+                7 & Deployment & SD & \multicolumn{1}{|c|}{9} & PM, PO & Internet, PC \\
+
+                8 & Reports, follow-ups, future plans & PM & \multicolumn{1}{|c|}{4} & PO & Internet, PC \\
+		 \hline
+                 & TOTAL & & \multicolumn{1}{c|}{180} \\ \hline
+		\end{tabular}
+	}
+\label{BriefSchedule}
+\end{table}
+
+According to the schedule presented above, the expected time of the development
+is 180 days, plus 21 days reserve. Given this table we can count the days
+dedicated by each person for this project.
+\begin{enumerate}
+    \item[--] Project Manager : 15 days
+    \item[--] System Architect : 23 days
+    \item[--] Software Developer : 131 days
+    \item[--] Designer : 20 days
+\end{enumerate}
+
+\subsection{Economic proof}
+With the help of a wide research space, it is possible to bring economical
+proofs for the IT projects, basing on the specific of the concurrences in
+economic relationships. In the conditions of a low degree of determination of
+the marketing environment, of high prices volatility, small degree of prognoses
+depth, a common business-plan can't forecast reliably the final results of the
+business. With this in mind, one of the basic instruments is choosing the
+methods, the right positions and indicators for the economical proofs. \\
+In order to reach this goal conditions, we must do numerous scientifically
+researches, subordinated to the primary goal and formulated by means of the
+following objectives:
+\begin{enumerate}
+    \item[--] Studying the theoretical and methodical aspects of the business-planning in the conditions of the concurrency on the market;
+    \item[--] Systematization, determining the methodology and specifying the indices for the economical proof of the business-plans in IT;
+    \item[--] Study and analysis of the actual practice of economical proofs of the business-plans for IT in Republic of Moldova;
+    \item[--] Developing methodological concepts of the proofs of the decision of investment in the conditions of risk and incertitude;
+    \item[--]  Studying the evaluation criteria of the business-projects’ efficiency and elaboration of a mechanism of complex evaluation of these.
+\end{enumerate}
+
+\subsection{Material and non-material expenses}
+The manufacture of products or goods require prime material. In general, these
+materials fall into two categories. These categories are direct material and
+indirect materials. Direct materials are also called productive and material
+goods, raw materials, storage materials without descriptive purposes only.
+Direct material for a developer uses their work computers and other devices such
+as a flash drive, CD-R, and others. Examples of direct material for the
+production of computers is plastic, aluminum and glass. The direct material for
+a developer serves their working computer, laptops, digitizers and other devices
+such as flash drive, CD, and others. In table 5.2 and 5.3 below are presented
+the material and non material expenses that arise during its development.
+
+\begin{table}[ht!]
+	\centering
+	\caption{Long term material actives}
+	{
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{C{1cm}|C{5.5cm}|d{1}|C{2cm}|d{2}}
+		\hline
+		Nr. & Name & Unit's price, MDL & Required quantity, units & Sum, lei\\
+		\hline \hline
+		1 & PC &  10404 &  3 & 31212 \\
+
+		2 & Printer & 1623 & 1 & 1623 \\
+	\hline
+		\multicolumn{4}{c|}{TOTAL} & \multicolumn{1}{d{2}}{32835} \\
+		\hline
+		\end{tabular}
+	}
+\label{LongTermMaterial}
+\end{table}
+
+
+\begin{table}[ht!]
+	\centering
+	\caption{Long term non-material actives}
+	{
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{C{1cm}|C{4.5cm}|d{2}|C{2cm}|d{2}}
+		\hline
+		Nr. & Name & Unit's price, MDL & Required quantity, units & Sum, MDL\\
+		\hline \hline
+                1 & GNU/Linux OS & Free  &  3 & 0\\
+
+		2 & Hosting & 480 & 5 & 2400 \\
+		\hline
+		\multicolumn{4}{c|}{TOTAL}& \multicolumn{1}{d{2}}{2400} \\
+		\hline
+		\end{tabular}
+	}
+\label{LongTermNonMaterial}
+\end{table}
+
+Direct expenses (Table \ref{DirectMaterialCosts}) will include logistics products that will be used for development cycle of the project.
+
+\begin{table}[ht!]
+	\centering
+	\caption{Direct materials costs}
+	{
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{c|c|d{2}|c|d{2}}
+		\hline
+		Nr. & Name & Unit's price, MDL & Required quantity, units & Sum, MDL\\
+		\hline \hline
+		1 & Office paper &  52 &  2 & 104 \\
+
+		2 & Printer ink & 150 & 2 & 130 \\
+
+		3 & Pen & 10 & 15 & 150 \\
+
+		4 & Marker & 20 & 6 & 120 \\
+
+		5 & Whiteboard & 890 & 1 & 890 \\
+
+		6 & Post-it notes & 5 & 8 & 40 \\
+		\hline
+		\multicolumn{4}{c|}{TOTAL} & \multicolumn{1}{d{2}}{1604} \\
+		\hline
+		\end{tabular}
+	}
+\label{DirectMaterialCosts}
+\end{table}
+
+\textbf{Conclusion:} In table \ref{LongTermNonMaterial} are indicated the
+non-material expenses for this project. In table \ref{LongTermMaterial} are
+described material expenses. The total expenses for material and non-material
+actives used for the development of this project are 55932 MDL.
+
+\subsubsection{Salary expenses}
+For the job of the workers the salary is calculated according to the table 5.5,
+where we can see the amount of work (time) done and the price for each kind of
+job. As all the employees are working part-time jobs the number of hours worked
+for each employee is less than the standard 40hours/week. The time spent by each
+employee was tracked with OpenProject, a web-based project management system,
+where each employee has to track the time spent on each task.
+
+
+\begin{table}[ht!]
+	\centering
+	\caption{Salary expenses}
+	{
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{c|c|c|d{2}|d{2}}
+		\hline
+		Nr. & Position held & Am. of work, days & Individual salary, MDL/day & Salary fund, MDL\\
+		\hline \hline
+		1 & System architect &  23 & 640 & 14720.0\\
+
+		2 & Project manager & 15 & 600 & 9000.0\\
+
+		3 & Designer & 20 & 720 & 14400.0\\
+
+		4 & Programmer & 131 & 700 & 91700.0\\
+                \hline
+                \multicolumn{4}{c|}{Total pay off for all the workers}& \multicolumn{1}{d{2}}{129820.0} \\
+                \hline
+                \multicolumn{4}{c|}{Social fund(23 \%)}& \multicolumn{1}{d{2}}{29858.6} \\
+                \hline
+                \multicolumn{4}{c|}{Medical assurance (4 \%)}& \multicolumn{1}{d{2}}{5192.8} \\
+                \hline
+                \multicolumn{4}{c|}{Totally work remuneration}& \multicolumn{1}{d{2}}{164871.4} \\
+                \hline
+		\end{tabular}
+	}
+\label{SalaryExpenses}
+\end{table}
+
+To make it more explicit, here it comes the formula in base of which was calculated:
+\begin{eqnarray}
+F_{rm} = 14720 + 9000 + 14400 + 91700 = 129820 (MDL) , \label{PayOff}
+\end{eqnarray}
+Where \(F_{rm}\) is “Fondul de Retribuire a Muncii”, and on its basis is calculated the \(FS\):
+
+\begin{eqnarray}
+FS =  F_{rm} \cdot C_{fs} , \label{FondulSocial}
+\end{eqnarray}
+where FS is the sum of the contributions for the Fondul Social (FS) and
+\(C_{fs}\) is contribution quota for the state mandatory social assurance,
+approved each year by the Law of Budget of state (in 2014 – 23\%).
+\begin{eqnarray}
+FS = 129820 \cdot 0.23 = 29858.6 (MDL),
+\end{eqnarray}
+and
+\begin{eqnarray}
+AM = F_{rm} \cdot C_{am},
+\end{eqnarray}
+where AM is Medical Assurance and \(C_{am}\) is medical assurance quota approved
+each year by the Law of Budget for state medical assurance (in 2014 – 4\%), and
+is being computed by
+\begin{eqnarray}
+AM = 129820 \cdot 0.04 = 5192.8 (MDL) ,
+\end{eqnarray}
+The sum \(F_{rm} + FS +AM\) will be the total expense for work retribution.
+\begin{eqnarray}
+Total = 129820 + 29858.6 + 5192.8 = 164871.4 (MDL)
+\end{eqnarray}
+Retirement fund consists 6\% of gross income and is calculated by following formula:
+\begin{eqnarray}
+Retirement fund = Gross~ income \cdot 0.06 = 164871.4\cdot 0.06 = 9892.284 (MDL)
+\end{eqnarray}
+
+\subsubsection{Indirect expenses}
+The fixed means pay-off is the partial loss of the consumable properties and
+value of the means during their usage, influenced by different factors and the
+increase of the work productivity.
+For computing electricity usage we’ll take in to account that PC uses 350W per
+working hour (8 hours per day * 180 usage days, 1440 hours). So we’ll have:
+\begin{eqnarray}
+Total~ power~ usage =  \frac{ 3 \cdot 350 \cdot 1440 }{1000}  =  1512 kWh
+\end{eqnarray}
+\begin{table}[ht!]
+	\centering
+	\caption{Indirect expenses}
+	{
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{c|c|c|d{2}|d{2}}
+		\hline
+		Name & Measure & Quantity & Tariff, lei & Total, lei\\
+		\hline \hline
+		Energy consumed & KWh & 1512 & 1.58 & 2388.96 \\
+
+		Internet services & Subscription/month &  3 & 160 & 480.0 \\
+
+		Office rent & contract & 3 & 3500 & 10500.0 \\
+
+		Office Meals & Subscription/month & 3 & 1500 & 4500.0 \\
+
+		\hline
+		\multicolumn{4}{c|}{Total}& \multicolumn{1}{d{2}}{17868.96} \\
+		\hline
+		\end{tabular}
+	}
+\label{IndirectExpenses}
+\end{table}
+
+
+\subsubsection{Wear calculation}
+Table \ref{MaterialWearCost} shows the wear of equipment was used for the
+execution of this project. Each equipment in the following table has the partial
+loss of the consumable properties and value of the means during their usage,
+influenced by different factors and the increase of the work productivity. The
+formula by which we compute these data is
+\begin{eqnarray}
+FA = (V \cdot T)/T_{1},
+\end{eqnarray}
+where V is initial value of the active, \(T_{1}\)- denotes useful usage time of
+the active and T is actual time the active will be used in project development
+
+\begin{table}[ht!]
+	%\centering
+	\caption{Material wear cost}
+	{
+		\renewcommand{\arraystretch}{1.25}
+                \begin{tabular}{c|d{2}|C{2cm}|d{2}|C{2cm}}
+		\hline
+                Long term mat. active & Init\ value, MDL & Useful usage time, d & Project duration, days & Wear exp, MDL \\
+		\hline \hline
+                PC & 31212 &  \multicolumn{1}{c|}{2000} & 180 & 2809.0 \\
+
+                Printer & 1623 & \multicolumn{1}{c|}{2000} & 180 & 146.07 \\
+		\hline
+		\multicolumn{3}{c|}{Total}& \multicolumn{1}{d{2}}{2955.07} \\
+		\hline
+		\end{tabular}
+	}
+\label{MaterialWearCost}
+\end{table}
+
+\subsection{Project Cost}
+The total cost of the project may be computed by adding together all the
+expenses, which is illustrated in table \ref{ProjectExpenses}.
+
+\begin{table}[ht!]
+	\centering
+	\caption{Summary calculation related to the project}
+	{
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{c|d{2}|d{2}}
+		\hline
+		Computing articles & Value, MDL & \% \\
+		\hline \hline
+		Salary Expenses & 129820 &  69.9 \\
+
+		Social fund & 29858.8 & 16.07 \\
+
+		Medical assurance & 5192.8 & 2.8 \\
+
+		Indirect expenses & 17868.96 & 9.62 \\
+
+		Material expenses wear cost & 2955.07 & 1.59 \\
+		\hline
+		Total & 185695.43 & 100.0 \\
+		\hline
+		\end{tabular}
+	}
+\label{ProjectExpenses}
+\end{table}
+
+
+\subsection{Financial results}
+The “Discite” project will have a subscription by year of 1500lei for
+collocation with custom domain, and installation of a self-hosted version for
+one single tax of 5000 lei. There are expected 60 subscriptions and 10
+installation of the self hosted version in the first year.
+Finally the Gross Income (CA) will be:
+
+
+\begin{eqnarray}
+CA_{B} = Q \cdot P = 1500 \cdot 100 + 40 \cdot 5000~MDL = 350000~MDL ~~(including~VAT)
+\end{eqnarray}
+The net income is computed by removing 20\% from the gross income:
+\begin{eqnarray}
+CA_{N} = CA_{B} - TVA = 350000 - 350000 \cdot 0.2 = 280000~MDL
+\end{eqnarray}
+The gross profit can now be computed following the formula:
+\begin{eqnarray}
+P_{B} = CA_{N} - C_{T} = 280000 - 185695.43 =  = 94304.57~MDL
+\end{eqnarray}
+Now that the gross profit is determined, we can now compute the net profit. To get the net profit we
+have to subtract a certain percentage from the gross profit that is dependent on the type of entity (a person or a legal personality). In our case the company "NovaTech LLC" (Limited Liability Company) is a legal personality, and the percentage to subtract is 12\%. The indicators are as follows
+\begin{eqnarray}
+ I_{P} = P_{B} \cdot 0.12 = 94304.57~MDL \cdot 0.12 = 11316.54~MDL
+\end{eqnarray}
+Thus the net profit can be computed by subtracting the taxes from gross profit
+\begin{eqnarray}
+P_{N} = P_{B} - I_{P} = 94304.57~MDL - 11316.54~MDL = 82988.03~MDL
+\end{eqnarray}
+Some profitability indicators can be computed to see how well the product was sold
+\begin{eqnarray}
+Sales~ profitability = \frac{P_{B}}{CA_{B}} \cdot 100\% = \frac{94304.57}{350000} \cdot 100\% = 26.9\%
+\end{eqnarray}
+\begin{eqnarray}
+Economic~profitability = \frac{P_{B}}{C_{T}} \cdot 100\% = \frac{94304.57}{185695.43} \cdot 100 = 50.7\%
+\end{eqnarray}
+
+
+\subsection{Economic Conclusion}
+The project Discite seems to a be a profitable one, if the prognosis are met.
+Given  the nature of the service provided, the sales can go worldwide at no
+expenses or developer time. Further costs for development and maintenance are
+low, and the subscription based business model makes the service profitable, and
+convenient for consumers (mainly universities and schools), as they don't need
+to maintain servers or handle upgrades. Also, the second option of having the
+service (paying for installation) is necessary for customers that have special
+requirements for privacy, or too slow internet connections.
+
+\clearpage
