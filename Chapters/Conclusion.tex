@@ -1,8 +1,8 @@
 \section*{Conclusions}
 \phantomsection
 As the thesis projects was developed, several technical challenges were met:
-the functionality of the video chat had to be reduced, as sending tens or
-hundreds of video streams simoultaneuosly is currently impossible.
+the functionality of the video chat had to be reduced, as sending tens
+of video streams simoultaneuosly is currently impossible.
 One of the reasons is that  decoding the video stream is a very computing
 intensive operation. The connections using WebRTC are peer-to-peer so the server
 is not a bottleneck, but users with older computers would not be able to handle
@@ -31,14 +31,14 @@ if all participants are at the same slide should be introduced.
 
 Future work inlcudes the admin panel, a rewrite of the course page in NodeJS,
 WebSockets as the sycronization channel, and a better course discovery experience.
-Because of the lack of time and experience desining a big systems, the application
-feels a bit half-backed un unstable, but it was a powerfull learning experience.
+Because of the lack of time and experience designing a big systems, the application
+feels a bit half-backed and unstable, but it was a powerful learning experience.
 Athough the web app was tested with Chrome and Firefox, the experience is still
 bit flacky.
 A lot of work was put in making PDF and ODF presentation uploads available: many
 teachers already have their presentations in PDF, .odp or .ppt format, but building
 this has failed, mainly because of weak skills in JavaScript and very complex libraries
-used to render those files, like WebODF and PDF.js; because of time contraints this
+used to render those files, like WebODF, PDF.js and ViewerJS; because of time contraints this
 task was delayed.
 
 The main objective has been reached: the application was build using modern
